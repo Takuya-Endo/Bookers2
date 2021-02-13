@@ -1,0 +1,7 @@
+<%= form_with model: @user, local: true do |f| %>
+  <p>Name</p>
+  <%= f.text_field :name %>
+  <p>Introduction</p>
+  <%= f.text_field :introduction %>
+  <%= f.submit 'Update User' %>
+<% end %>
