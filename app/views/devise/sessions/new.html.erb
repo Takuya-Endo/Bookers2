@@ -1,7 +1,7 @@
 <h2>Log in</h2>
 
-<%= form_with model: @user, url: 'user_path(@user.id)', local: true do |f| %>
-  <div class="field">
+<%= form_with model: @user, url: user_session_path, local: true do |f| %>
+  <div class="field">       <!--↑devise/sessions#createはライブラリで用意されているためapplication_controllerに記述して修正-->
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
