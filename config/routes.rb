@@ -37,9 +37,4 @@ Rails.application.routes.draw do
               # PUT    /books/:id(.:format)       books#update
               # DELETE /books/:id(.:format)       books#destroy
 
-    resources :profile_image, only: [:edit, :update]
-    #   edit_profile_image GET    /profile_image/:id/edit(.:format)  profile_image#edit
-           # profile_image PATCH  /profile_image/:id(.:format)       profile_image#update
-                       #   PUT    /profile_image/:id(.:format)       profile_image#update
-
 end

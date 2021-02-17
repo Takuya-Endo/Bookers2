@@ -1,11 +1,9 @@
-<%= form_with model: @user, local: true do |f| %>
+<%= form_with model:@user, local: true do |f| %>
   <p>Name</p>
   <%= f.text_field :name %>
 
-  <%= form_with model: @profile_image, url:"/users/#{@user.id}", local: true do |f| %>
-    <p>Image</p>
-    <%= f.attachment_field :image %>
-  <% end %>
+  <p>Image</p>
+  <%= f.attachment_field :profile_image %>
 
   <p>Introduction</p>
   <%= f.text_field :introduction %>
