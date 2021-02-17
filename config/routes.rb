@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'homes#top'
+    root to: 'homes#top'
 
-  devise_for :users
+    devise_for :users
             # new_user_session GET    /users/sign_in(.:format)         devise/sessions#new
                 # user_session POST   /users/sign_in(.:format)         devise/sessions#create
         # destroy_user_session DELETE /users/sign_out(.:format)        devise/sessions#destroy
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
                              # DELETE /users(.:format)                 devise/registrations#destroy
                              # POST   /users(.:format)                 devise/registrations#create
 
-  resources :users, only: [:create, :index, :show, :edit, :update]
+    resources :users, only: [:create, :index, :show, :edit, :update]
         # users GET    /users(.:format)           users#index
               # POST   /users(.:format)           users#create
     # edit_user GET    /users/:id/edit(.:format)  users#edit
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
               # PATCH  /users/:id(.:format)       users#update
               # PUT    /users/:id(.:format)       users#update
 
-  resources :books
+    resources :books
         # books GET    /books(.:format)           books#index
               # POST   /books(.:format)           books#create
      # new_book GET    /books/new(.:format)       books#new
@@ -36,5 +36,10 @@ Rails.application.routes.draw do
               # PATCH  /books/:id(.:format)       books#update
               # PUT    /books/:id(.:format)       books#update
               # DELETE /books/:id(.:format)       books#destroy
+
+    resources :profile_image, only: [:edit, :update]
+    #   edit_profile_image GET    /profile_image/:id/edit(.:format)  profile_image#edit
+           # profile_image PATCH  /profile_image/:id(.:format)       profile_image#update
+                       #   PUT    /profile_image/:id(.:format)       profile_image#update
 
 end
