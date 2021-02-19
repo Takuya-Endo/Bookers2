@@ -1,4 +1,4 @@
 <!--後で部分テンプレートでUserinfoを追加-->
-<%= @book.user_id %>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpg' 'png', fallback: "no_image.jpg" %>
 <%= @book.title %>
 <%= @book.body %>

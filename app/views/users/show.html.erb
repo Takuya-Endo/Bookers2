@@ -1,6 +1,6 @@
 <h1>User info</h1>
 
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'png', fallback: "no_image.jpg" %>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpg' 'png', fallback: "no_image.jpg" %>
 
 <p>name</p>
 <p><%= @user.name %></p>
@@ -20,8 +20,8 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
   <div>
-    <%= book.user_id%>
-    <%= book.title %>
+    <%= attachment_image_tag @user , :profile_image, :fill, 60, 60, format: 'jpg' 'png', fallback: "no_image.jpg" %>
+    <%= link_to book.title, book_path(book.id) %>
     <%= book.body %>
-  </di>
+  </div>
 <% end %>
