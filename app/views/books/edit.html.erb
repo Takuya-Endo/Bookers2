@@ -1,0 +1,10 @@
+<h1>Editing Book</h1>
+<%= form_with modrl:@book, local: true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body %>
+  <%= f.submit "Update Book" %>
+<% end %>
+
+<%= link_to "Show", book_path(@book.id) %>
+<%= link_to "Back", books_path %>
+<p>CopyRight</p>
