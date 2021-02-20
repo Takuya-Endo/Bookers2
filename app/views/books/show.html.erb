@@ -1,4 +1,6 @@
-<!--後で部分テンプレートでUserinfoを追加-->
+<%= render 'shared/user-info-and-new-book', user: @user, book: @book %>
+<!--↑部分テンプレート呼び出し-->
+
 <div>
   <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpg' 'png', fallback: "no_image.jpg" %>
   <%= @book.title %>
