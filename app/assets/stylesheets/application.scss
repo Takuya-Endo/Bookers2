@@ -18,13 +18,16 @@
 @import 'font-awesome';
 
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .field, .actions {
   margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
