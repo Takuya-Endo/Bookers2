@@ -1,10 +1,33 @@
-<%= render 'shared/user-info-and-new-book', user: @user, book: @book %>
-<!--↑部分テンプレート呼び出し-->
+<p id ="notice"></p>
 
-<% @users.each do |user| %>
-  <p>
-    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpg' 'png', fallback: "no_image.jpg" %>
-    <%= user.name %>
-    <%= link_to "Show", user_path(user.id)%>
-  </p>
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+
+    <!--↓部分テンプレート呼び出し-->
+    <%= render 'shared/user-info-and-new-book', user: @user, book: @book %>
+    <!---->
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Users</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpg' 'png', fallback: "no_image.jpg", size:'40x40' %></td>
+              <td><%= user.name %></td>
+              <td><%= link_to "Show", user_path(user.id)%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
