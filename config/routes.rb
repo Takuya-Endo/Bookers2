@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
     root to: 'homes#top'
+    get 'home/about' => 'homes#about'
 
     devise_for :users
             # new_user_session GET    /users/sign_in(.:format)         devise/sessions#new
