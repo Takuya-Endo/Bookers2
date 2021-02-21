@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  before_action :edit, if: :check_current_user_id
+
+  def check_current_user_id
+    current_user.id == params[:id].to_i
+  end
+
+
   def index
     @users = User.all
     @user = User.find(current_user.id)
