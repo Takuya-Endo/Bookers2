@@ -2,7 +2,7 @@
   <div class="row">
 
     <!--↓部分テンプレート呼び出し-->
-    <%= render 'shared/user-info-and-new-book', user: @user, book: @book %>
+    <%= render 'shared/user-info-and-new-book', user: @user %>
     <!---->
 
     <div class="col-md-8 offset-md-1">
@@ -11,7 +11,7 @@
         <tbody>
           <tr>
             <td>
-              <%= link_to edit_book_path(@book.id) do %>
+              <%= link_to user_path(@book.user_id) do %>
                 <%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, format: 'jpg' 'png', fallback: "no_image.jpg", size:'40x40' %>
                 <br>
                 <%= @book.user.name %>
